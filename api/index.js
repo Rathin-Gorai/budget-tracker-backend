@@ -4,15 +4,10 @@ import morgan from "morgan";
 import { connectDB } from "../config/db_connect.js";
 import routers from "../routes/routes.js";
 const app = express();
-// Middlewares
-
+// Middlewares 
 app.use(cors());
-
 app.use(express.json());
-
 app.use(morgan("dev"));
-
-
 // Routes
 
 app.use("/api", routers);
@@ -44,6 +39,6 @@ app.use((req, res, next) => {
     next();
 });
 
-module.exports = app;
+export default app;
 
 // vercel setting end -----------------------
