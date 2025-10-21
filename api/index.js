@@ -30,7 +30,6 @@ const startServer = async () => {
     try {
         if (!isConnected) {
             await connectDB();
-            await db.sync({ alter: true });
             isConnected = true;
         }
     } catch (error) {
