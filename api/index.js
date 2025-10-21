@@ -1,9 +1,8 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
-import { connectDB } from "../config/db_connect";
-import db from "../models";
-import routers from "../routes/routes";
+import { connectDB } from "../config/db_connect.js";
+import routers from "../routes/routes.js";
 const app = express();
 // Middlewares
 
