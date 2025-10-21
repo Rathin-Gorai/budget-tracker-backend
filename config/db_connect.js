@@ -1,6 +1,7 @@
 import { Sequelize } from "sequelize";
 import dotenv from "dotenv";
 import process from "process";
+import pg from "pg";
 dotenv.config();
 // Initialize Sequelize instance
 const useSSL = process.env.DB_SSL === "true";
@@ -12,6 +13,7 @@ const sequelize = new Sequelize(
     {
         host: process.env.DB_HOST,
         dialect: "postgres",
+        dialectModule: pg,
         logging: false,
         dialectOptions: useSSL
             ? {
